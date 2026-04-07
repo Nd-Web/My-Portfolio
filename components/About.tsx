@@ -33,7 +33,7 @@ export default function About() {
           >
             <div className="relative">
               {/* Avatar Component - replace src with your actual image path */}
-              <Avatar src="/avatar.jpg" alt="Ndubuisi" />
+              <Avatar src="/avatar.png" alt="Ndubuisi" />
 
               {/* Floating Elements */}
               <motion.div

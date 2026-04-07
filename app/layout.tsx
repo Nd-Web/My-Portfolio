@@ -83,7 +83,6 @@ const structuredData = {
   sameAs: [
     "https://github.com/ndubuisi",
     "https://linkedin.com/in/ndubuisi",
-    "https://twitter.com/ndubuisi",
     "mailto:hello@ndubuisi.dev",
   ],
   worksFor: {

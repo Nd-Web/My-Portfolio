@@ -8,7 +8,8 @@ const projects = [
     description:
       'A real-time financial platform with fake money transactions, live balance updates, and instant peer-to-peer transfers. Built with WebSocket for real-time communication.',
     techStack: ['Node.js', 'Express', 'Supabase', 'WebSocket', 'React'],
-    image: '💰',
+    image: '/projects/fintech-app.png',
+    imageAlt: 'Fintech App dashboard showing real-time transactions',
     liveUrl: 'https://github.com/ndubuisi/fintech-app',
     githubUrl: 'https://github.com/ndubuisi/fintech-app',
     gradient: 'from-green-600 to-emerald-600',
@@ -18,7 +19,8 @@ const projects = [
     description:
       'AI-powered voice payment system that processes natural language commands to execute transactions. Integrates OpenAI and payment APIs for seamless voice commerce.',
     techStack: ['OpenAI', 'Vapi', 'Node.js', 'Stripe API', 'React'],
-    image: '🎤',
+    image: '/projects/voice-payment-ai.png',
+    imageAlt: 'Voice-to-Payment AI interface with voice wave visualization',
     liveUrl: 'https://github.com/ndubuisi/voice-payment-ai',
     githubUrl: 'https://github.com/ndubuisi/voice-payment-ai',
     gradient: 'from-purple-600 to-pink-600',
@@ -28,7 +30,8 @@ const projects = [
     description:
       'Intelligent scholarship matching platform using AI to analyze student profiles and recommend relevant opportunities. Features automated application tracking.',
     techStack: ['Next.js', 'OpenAI', 'Supabase', 'Tailwind', 'TypeScript'],
-    image: '🎓',
+    image: '/projects/scholarship-finder-ai.png',
+    imageAlt: 'Scholarship Finder AI matching dashboard',
     liveUrl: 'https://github.com/ndubuisi/scholarship-finder-ai',
     githubUrl: 'https://github.com/ndubuisi/scholarship-finder-ai',
     gradient: 'from-blue-600 to-cyan-600',
@@ -38,7 +41,8 @@ const projects = [
     description:
       'Feature-rich messaging platform with instant messaging, group chats, file sharing, and end-to-end encryption. Supports online presence and typing indicators.',
     techStack: ['React', 'Socket.io', 'Node.js', 'Redis', 'MongoDB'],
-    image: '💬',
+    image: '/projects/realtime-chat.png',
+    imageAlt: 'Real-time Chat App showing conversation interface',
     liveUrl: 'https://github.com/ndubuisi/realtime-chat',
     githubUrl: 'https://github.com/ndubuisi/realtime-chat',
     gradient: 'from-orange-600 to-red-600',
@@ -126,16 +130,36 @@ export default function Projects() {
                   }}
                 />
 
-                {/* Project Image Placeholder */}
+                {/* Project Image */}
                 <motion.div
-                  className="relative h-48 mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-white/5 to-white/10 border border-white/10 flex items-center justify-center"
+                  className="relative h-48 mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-white/5 to-white/10 border border-white/10"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20`}
                   />
-                  <span className="text-6xl relative z-10">{project.image}</span>
+                  <img
+                    src={project.image}
+                    alt={project.imageAlt}
+                    className="w-full h-full object-cover relative z-10"
+                    onError={(e) => {
+                      // Fallback to emoji if image fails to load
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      target.parentElement!.classList.add('flex', 'items-center', 'justify-center');
+                      const fallback = document.createElement('span');
+                      fallback.className = 'text-6xl relative z-10';
+                      const emojiMap: Record<string, string> = {
+                        '/projects/fintech-app.png': '💰',
+                        '/projects/voice-payment-ai.png': '🎤',
+                        '/projects/scholarship-finder-ai.png': '🎓',
+                        '/projects/realtime-chat.png': '💬',
+                      };
+                      fallback.textContent = emojiMap[project.image] || '📁';
+                      target.parentElement!.appendChild(fallback);
+                    }}
+                  />
 
                   {/* Overlay on hover */}
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">

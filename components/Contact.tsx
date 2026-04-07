@@ -13,15 +13,39 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
+  const [errors, setErrors] = useState<{name?: string; email?: string; message?: string}>({});
+
+  const validateForm = () => {
+    const newErrors: {name?: string; email?: string; message?: string} = {};
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    }
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email';
+    }
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Message must be at least 10 characters';
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     setError('');
+    setErrors({});
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
 
     try {
-      // Replace with your Formspree endpoint URL
-      // Sign up at https://formspree.io/ to get your unique endpoint
       const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || '';
 
       if (FORMSPREE_ENDPOINT) {
@@ -41,7 +65,6 @@ export default function Contact() {
           setError('Failed to send message. Please try again.');
         }
       } else {
-        // Fallback: simulate submission if no endpoint configured
         console.log('Form submission (simulated):', formData);
         setSubmitted(true);
         setFormData({ name: '', email: '', message: '' });
@@ -151,14 +174,18 @@ export default function Contact() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all"
+                      aria-invalid={!!errors.name}
+                      aria-describedby={errors.name ? 'name-error' : undefined}
+                      className={`w-full px-4 py-3 bg-white/5 border rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all ${errors.name ? 'border-red-500/50' : 'border-white/10'}`}
                       placeholder="John Doe"
                     />
                     <motion.div
                       className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 scale-x-0 focus-within:scale-x-100 transition-transform duration-300"
                     />
                   </div>
+                  {errors.name && (
+                    <p id="name-error" className="text-red-400 text-sm mt-1">{errors.name}</p>
+                  )}
                 </motion.div>
 
                 {/* Email Input */}
@@ -181,14 +208,18 @@ export default function Contact() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all"
+                      aria-invalid={!!errors.email}
+                      aria-describedby={errors.email ? 'email-error' : undefined}
+                      className={`w-full px-4 py-3 bg-white/5 border rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all ${errors.email ? 'border-red-500/50' : 'border-white/10'}`}
                       placeholder="john@example.com"
                     />
                     <motion.div
                       className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 scale-x-0 focus-within:scale-x-100 transition-transform duration-300"
                     />
                   </div>
+                  {errors.email && (
+                    <p id="email-error" className="text-red-400 text-sm mt-1">{errors.email}</p>
+                  )}
                 </motion.div>
 
                 {/* Message Textarea */}
@@ -210,15 +241,19 @@ export default function Contact() {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      required
+                      aria-invalid={!!errors.message}
+                      aria-describedby={errors.message ? 'message-error' : undefined}
                       rows={5}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all resize-none"
+                      className={`w-full px-4 py-3 bg-white/5 border rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 focus:bg-white/10 transition-all resize-none ${errors.message ? 'border-red-500/50' : 'border-white/10'}`}
                       placeholder="Tell me about your project..."
                     />
                     <motion.div
                       className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 scale-x-0 focus-within:scale-x-100 transition-transform duration-300"
                     />
                   </div>
+                  {errors.message && (
+                    <p id="message-error" className="text-red-400 text-sm mt-1">{errors.message}</p>
+                  )}
                 </motion.div>
 
                 {/* Submit Button */}

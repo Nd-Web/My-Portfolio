@@ -12,7 +12,6 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import BackToTop from '@/components/BackToTop';
 import SkipToContent from '@/components/SkipToContent';
-import ThemeToggle from '@/components/ThemeToggle';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -86,7 +85,6 @@ export default function Home() {
           </main>
           <Footer />
           <BackToTop />
-          <ThemeToggle />
         </motion.div>
       </AnimatePresence>
     </motion.div>
