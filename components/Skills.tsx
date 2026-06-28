@@ -56,7 +56,7 @@ const cardVariants = {
 
 export default function Skills() {
   return (
-    <section id="skills" aria-label="Technical skills of Ekeh Ndubuisi — AI, Backend, Fullstack" className="py-24 px-6 relative bg-black/30">
+    <section id="skills" aria-label="Technical skills of Ndubuisi Ekeh — AI, Backend, Fullstack" className="py-24 px-6 relative bg-black/30">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

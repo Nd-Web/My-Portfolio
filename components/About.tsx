@@ -12,7 +12,7 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" aria-label="About Ekeh Ndubuisi — Backend AI Engineer Lagos Nigeria" className="py-24 px-6 relative">
+    <section id="about" aria-label="About Ndubuisi Ekeh — Backend AI Engineer Lagos Nigeria" className="py-24 px-6 relative">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -37,7 +37,7 @@ export default function About() {
             className="flex justify-center"
           >
             <div className="relative">
-              <Avatar src="/avatar.png" alt="Ekeh Ndubuisi — Fullstack AI & Backend Engineer, Lagos Nigeria" />
+              <Avatar src="/avatar.png" alt="Ndubuisi Ekeh — Fullstack AI & Backend Engineer, Lagos Nigeria" />
               <motion.div
                 className="absolute -top-4 -right-4 w-16 h-16 bg-purple-600/30 rounded-2xl backdrop-blur-sm border border-purple-500/30 flex items-center justify-center"
                 animate={{ y: [0, -10, 0] }}
@@ -66,12 +66,12 @@ export default function About() {
               Building AI Systems That Actually Ship
             </h3>
             <p className="text-gray-400 text-lg mb-4 leading-relaxed">
-              I&apos;m <strong className="text-white">Ekeh Paul Ndubuisi</strong> — a Lagos-based Fullstack AI &amp; Backend Engineer
+              I&apos;m <strong className="text-white">Ndubuisi Ekeh</strong> — a Lagos-based Fullstack AI &amp; Backend Engineer
               with 5+ years of experience and 60+ client projects across fintech, healthcare, e-commerce, and SaaS.
               I specialize in multi-agent AI systems, scalable REST APIs, and production-grade fullstack applications.
             </p>
             <p className="text-gray-400 text-lg mb-4 leading-relaxed">
-              I co-founded{' '}
+              I founded{' '}
               <a href="https://irokoai.site" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300">
                 Iroko AI
               </a>

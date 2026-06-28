@@ -18,13 +18,13 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://ndubusiekeh.com";
 
 export const metadata: Metadata = {
   title: {
-    default: "Ekeh Ndubuisi | Fullstack AI & Backend Engineer — Lagos, Nigeria",
-    template: "%s | Ekeh Ndubuisi",
+    default: "Ndubuisi Ekeh | Fullstack AI & Backend Engineer — Lagos, Nigeria",
+    template: "%s | Ndubuisi Ekeh",
   },
   description:
-    "Ekeh Paul Ndubuisi is a Lagos-based Fullstack AI & Backend Engineer with 5+ years experience. Founder of Iroko AI — 4th place at TeKnowledge × Microsoft 2026 Agentic AI Hackathon. Expert in Python, FastAPI, Node.js, Azure OpenAI, Semantic Kernel, React, and Next.js.",
+    "Ndubuisi Ekeh is a Lagos-based Fullstack AI & Backend Engineer with 5+ years experience. Founder of Iroko AI — 4th place at TeKnowledge × Microsoft 2026 Agentic AI Hackathon. Expert in Python, FastAPI, Node.js, Azure OpenAI, Semantic Kernel, React, and Next.js.",
   keywords: [
-    "Ekeh Ndubuisi",
+    "Ndubuisi Ekeh",
     "Ndubuisi Ekeh",
     "Paul Ndubuisi",
     "Backend Engineer Lagos",
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
     "3MTT Fellow Nigeria",
     "Microsoft Student Ambassador Nigeria",
   ],
-  authors: [{ name: "Ekeh Paul Ndubuisi", url: baseUrl }],
-  creator: "Ekeh Paul Ndubuisi",
+  authors: [{ name: "Ndubuisi Ekeh", url: baseUrl }],
+  creator: "Ndubuisi Ekeh",
   metadataBase: new URL(baseUrl),
   alternates: {
     canonical: baseUrl,
@@ -56,8 +56,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_NG",
     url: baseUrl,
-    siteName: "Ekeh Ndubuisi — Portfolio",
-    title: "Ekeh Ndubuisi | Fullstack AI & Backend Engineer — Lagos, Nigeria",
+    siteName: "Ndubuisi Ekeh — Portfolio",
+    title: "Ndubuisi Ekeh | Fullstack AI & Backend Engineer — Lagos, Nigeria",
     description:
       "Lagos-based Fullstack AI & Backend Engineer. Founder of Iroko AI — placed 4th at TeKnowledge × Microsoft 2026 Agentic AI Hackathon. 60+ client projects, AZ-204 certified, 3MTT Fellow.",
     images: [
@@ -65,13 +65,13 @@ export const metadata: Metadata = {
         url: `${baseUrl}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "Ekeh Ndubuisi - Fullstack AI & Backend Engineer Lagos Nigeria",
+        alt: "Ndubuisi Ekeh - Fullstack AI & Backend Engineer Lagos Nigeria",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ekeh Ndubuisi | Fullstack AI & Backend Engineer — Lagos, Nigeria",
+    title: "Ndubuisi Ekeh | Fullstack AI & Backend Engineer — Lagos, Nigeria",
     description:
       "Lagos-based Fullstack AI & Backend Engineer. Founder of Iroko AI. Python, FastAPI, Azure OpenAI, Semantic Kernel, React, Next.js.",
     creator: "@ndubuisiekeh",
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Ekeh Paul Ndubuisi",
+  name: "Ndubuisi Ekeh",
   alternateName: ["Ndubuisi Ekeh", "Paul Ndubuisi"],
   jobTitle: "Fullstack AI & Backend Engineer",
   description:

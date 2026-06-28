@@ -90,7 +90,7 @@ const cardVariants = {
 
 export default function Projects() {
   return (
-    <section id="projects" aria-label="Projects by Ekeh Ndubuisi — AI systems, fintech, SaaS" className="py-24 px-6 relative">
+    <section id="projects" aria-label="Projects by Ndubuisi Ekeh — AI systems, fintech, SaaS" className="py-24 px-6 relative">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -212,7 +212,7 @@ export default function Projects() {
             href="https://github.com/Nd-Web"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="View more projects by Ekeh Ndubuisi on GitHub"
+            aria-label="View more projects by Ndubuisi Ekeh on GitHub"
             className="inline-flex items-center gap-2 px-6 py-3 border border-white/20 rounded-full text-white hover:bg-white/5 hover:border-purple-500/50 transition-all"
             whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.95 }}
