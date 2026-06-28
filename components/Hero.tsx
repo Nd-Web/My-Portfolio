@@ -128,7 +128,7 @@ export default function Hero() {
           className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-6"
         >
           I build multi-agent AI systems, scalable backend APIs, and production-grade fullstack apps.
-          Co-founder of{' '}
+          Founder of{' '}
           <a
             href="https://irokoai.site"
             target="_blank"

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Ekeh Ndubuisi",
   },
   description:
-    "Ekeh Paul Ndubuisi is a Lagos-based Fullstack AI & Backend Engineer with 5+ years experience. Co-founder of Iroko AI — 4th place at TeKnowledge × Microsoft 2026 Agentic AI Hackathon. Expert in Python, FastAPI, Node.js, Azure OpenAI, Semantic Kernel, React, and Next.js.",
+    "Ekeh Paul Ndubuisi is a Lagos-based Fullstack AI & Backend Engineer with 5+ years experience. Founder of Iroko AI — 4th place at TeKnowledge × Microsoft 2026 Agentic AI Hackathon. Expert in Python, FastAPI, Node.js, Azure OpenAI, Semantic Kernel, React, and Next.js.",
   keywords: [
     "Ekeh Ndubuisi",
     "Ndubuisi Ekeh",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     siteName: "Ekeh Ndubuisi — Portfolio",
     title: "Ekeh Ndubuisi | Fullstack AI & Backend Engineer — Lagos, Nigeria",
     description:
-      "Lagos-based Fullstack AI & Backend Engineer. Co-founder of Iroko AI — placed 4th at TeKnowledge × Microsoft 2026 Agentic AI Hackathon. 60+ client projects, AZ-204 certified, 3MTT Fellow.",
+      "Lagos-based Fullstack AI & Backend Engineer. Founder of Iroko AI — placed 4th at TeKnowledge × Microsoft 2026 Agentic AI Hackathon. 60+ client projects, AZ-204 certified, 3MTT Fellow.",
     images: [
       {
         url: `${baseUrl}/og-image.png`,
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ekeh Ndubuisi | Fullstack AI & Backend Engineer — Lagos, Nigeria",
     description:
-      "Lagos-based Fullstack AI & Backend Engineer. Co-founder of Iroko AI. Python, FastAPI, Azure OpenAI, Semantic Kernel, React, Next.js.",
+      "Lagos-based Fullstack AI & Backend Engineer. Founder of Iroko AI. Python, FastAPI, Azure OpenAI, Semantic Kernel, React, Next.js.",
     creator: "@ndubuisiekeh",
   },
   robots: {
@@ -99,7 +99,7 @@ const structuredData = {
   alternateName: ["Ndubuisi Ekeh", "Paul Ndubuisi"],
   jobTitle: "Fullstack AI & Backend Engineer",
   description:
-    "Lagos-based Fullstack AI & Backend Engineer with 5+ years experience. Co-founder of Iroko AI — autonomous compliance intelligence platform. 4th place at TeKnowledge × Microsoft 2026 Agentic AI Hackathon. 3MTT Fellow, Microsoft Student Ambassador.",
+    "Lagos-based Fullstack AI & Backend Engineer with 5+ years experience. Founder of Iroko AI — autonomous compliance intelligence platform. 4th place at TeKnowledge × Microsoft 2026 Agentic AI Hackathon. 3MTT Fellow, Microsoft Student Ambassador.",
   url: baseUrl,
   image: `${baseUrl}/avatar.png`,
   email: "ndubuisiekeh0@gmail.com",
