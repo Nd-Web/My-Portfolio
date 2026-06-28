@@ -4,8 +4,9 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const titles = [
+  'Fullstack AI Engineer',
   'Backend Engineer',
-  'AI Developer',
+  'Agentic AI Builder',
   'System Architect',
 ];
 
@@ -38,40 +39,26 @@ export default function Hero() {
   return (
     <section
       id="home"
+      aria-label="Hero section — Ekeh Ndubuisi, Fullstack AI & Backend Engineer based in Lagos, Nigeria"
       className="relative min-h-screen flex items-center justify-center overflow-hidden animated-gradient"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Floating Orbs */}
         <motion.div
           className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, 50, 0],
-            scale: [1, 1.2, 1],
-          }}
+          animate={{ x: [0, 100, 0], y: [0, 50, 0], scale: [1, 1.2, 1] }}
           transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
           className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"
-          animate={{
-            x: [0, -100, 0],
-            y: [0, -50, 0],
-            scale: [1, 1.3, 1],
-          }}
+          animate={{ x: [0, -100, 0], y: [0, -50, 0], scale: [1, 1.3, 1] }}
           transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
           className="absolute top-1/2 left-1/2 w-64 h-64 bg-cyan-600/10 rounded-full blur-3xl"
-          animate={{
-            x: [0, 80, -80, 0],
-            y: [0, -100, 100, 0],
-            scale: [1, 1.1, 0.9, 1],
-          }}
+          animate={{ x: [0, 80, -80, 0], y: [0, -100, 100, 0], scale: [1, 1.1, 0.9, 1] }}
           transition={{ duration: 30, repeat: Infinity, ease: 'easeInOut' }}
         />
-
-        {/* Grid Pattern */}
         <div
           className="absolute inset-0 opacity-20"
           style={{
@@ -86,27 +73,37 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-        {/* Greeting */}
+        {/* Location badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-4"
+          className="mb-4 flex items-center justify-center gap-2"
         >
           <span className="text-purple-400 font-medium tracking-wider text-sm md:text-base">
             👋 Hello, I&apos;m
           </span>
         </motion.div>
 
-        {/* Name */}
+        {/* Name — full name for SEO entity recognition */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
+          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-2"
         >
-          <span className="gradient-text">Ndubuisi</span>
+          <span className="gradient-text">Ekeh Ndubuisi</span>
         </motion.h1>
+
+        {/* Location for local SEO */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="text-gray-500 text-sm mb-4 tracking-widest uppercase"
+        >
+          Lagos, Nigeria · Available for Remote & On-site
+        </motion.p>
 
         {/* Animated Title */}
         <motion.div
@@ -115,9 +112,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-2xl md:text-4xl lg:text-5xl font-semibold mb-6 h-16 flex items-center justify-center"
         >
-          <span className="text-white">
-            {displayText}
-          </span>
+          <span className="text-white">{displayText}</span>
           <motion.span
             className="inline-block w-1 h-8 md:h-10 lg:h-12 bg-purple-500 ml-1"
             animate={{ opacity: [1, 0, 1] }}
@@ -125,16 +120,47 @@ export default function Hero() {
           />
         </motion.div>
 
-        {/* Tagline */}
+        {/* Tagline — keyword-rich but natural */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-10"
+          className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-6"
         >
-          I build real-time systems, AI-powered apps, and scalable backend
-          solutions.
+          I build multi-agent AI systems, scalable backend APIs, and production-grade fullstack apps.
+          Co-founder of{' '}
+          <a
+            href="https://irokoai.site"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-400 hover:text-purple-300 underline underline-offset-2"
+          >
+            Iroko AI
+          </a>{' '}
+          — 4th place at the TeKnowledge × Microsoft 2026 Agentic AI Hackathon.
         </motion.p>
+
+        {/* Hackathon badge */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.35 }}
+          className="flex flex-wrap justify-center gap-3 mb-8"
+        >
+          {[
+            '🏆 TeKnowledge × Microsoft Hackathon — 4th Place',
+            '🎓 3MTT Fellow',
+            '🧑‍💼 Microsoft Student Ambassador',
+            '☁️ AZ-204 Certified',
+          ].map((badge) => (
+            <span
+              key={badge}
+              className="px-3 py-1 bg-white/5 border border-purple-500/30 rounded-full text-xs text-purple-300"
+            >
+              {badge}
+            </span>
+          ))}
+        </motion.div>
 
         {/* CTA Buttons */}
         <motion.div
@@ -151,18 +177,8 @@ export default function Hero() {
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
               View Projects
-              <svg
-                className="w-5 h-5 transition-transform group-hover:translate-x-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
+              <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
